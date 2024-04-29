@@ -23,15 +23,28 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  // hello
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FlutterLogo(size: 60,),
+          FlutterLogo(size: 100,),
           FlutterLogo(size: 60,),
-          FlutterLogo(size: 60,),
-          FlutterLogo(size: 60,),
+          FlutterLogo(size: 150,),
+          FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
+          // FlutterLogo(size: 150,),
         ],
       ),
     );
