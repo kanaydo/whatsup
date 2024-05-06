@@ -30,24 +30,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          FlutterLogo(size: 60,),
-          FlutterLogo(size: 100,),
-          FlutterLogo(size: 60,),
-          FlutterLogo(size: 150,),
-          FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-          // FlutterLogo(size: 150,),
-        ],
+      body: Container(
+        color: Colors.blue.shade50,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            FlutterLogo(),
+            SizedBox(width: 8,),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Bayu Angga Wijaya'),
+                  Row(
+                    children: [
+                      Icon(Icons.check, color: Colors.blue,),
+                      Text('okee'),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(width: 8,),
+            Text('yesterday'),
+          ],
+        ),
       ),
     );
   }
