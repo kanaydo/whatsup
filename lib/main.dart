@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsup/chat_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,29 +33,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.blue.shade50,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Column(
           children: [
-            FlutterLogo(),
-            SizedBox(width: 8,),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Bayu Angga Wijaya'),
-                  Row(
-                    children: [
-                      Icon(Icons.check, color: Colors.blue,),
-                      Text('okee'),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            SizedBox(width: 8,),
-            Text('yesterday'),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
+            ChatItem(),
           ],
         ),
       ),
