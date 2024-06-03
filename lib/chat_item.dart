@@ -1,7 +1,26 @@
 import 'package:flutter/material.dart';
 
+
+
+class ChatItemData {
+  final String pengirim;
+  final String pesan;
+  final String waktu;
+
+  ChatItemData({
+    required this.pengirim,
+    required this.pesan,
+    required this.waktu
+  });
+}
+
+
+
+
 class ChatItem extends StatelessWidget {
-  const ChatItem({super.key});
+  final ChatItemData data;
+
+  const ChatItem({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +35,18 @@ class ChatItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Bayu Angga Wijaya'),
+              Text(data.pengirim),
               Row(
                 children: [
                   Icon(Icons.check, color: Colors.blue,),
-                  Text('okee'),
+                  Text(data.pesan),
                 ],
               )
             ],
           ),
         ),
         SizedBox(width: 8,),
-        Text('yesterday'),
+        Text(data.waktu),
       ],
     );
   }

@@ -16,35 +16,31 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
-  // hello
-
-  // hello lagi
+  final chats = [
+   ChatItemData(pengirim: 'Tony Stark', pesan: 'Hello', waktu: '12:20'),
+   ChatItemData(pengirim: 'Bruce Banner', pesan: 'Makan yuk', waktu: '18:20'),
+   ChatItemData(pengirim: 'Steve Rogers', pesan: 'Pinjam Dulu 100', waktu: '08:00')
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         color: Colors.blue.shade50,
-        child: Column(
-          children: [
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-            ChatItem(),
-          ],
+        child: ListView.builder(
+          itemCount: chats.length,
+          itemBuilder: (context, index) {
+            final data = chats.elementAt(index);
+            return ChatItem(data: data);
+          },
         ),
       ),
     );
