@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsup/conversation_page.dart';
 
 
 
@@ -24,30 +25,40 @@ class ChatItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        FlutterLogo(),
-        SizedBox(width: 8,),
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(data.pengirim),
-              Row(
-                children: [
-                  Icon(Icons.check, color: Colors.blue,),
-                  Text(data.pesan),
-                ],
-              )
-            ],
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ConversationPage()
+            )
+        );
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          FlutterLogo(),
+          SizedBox(width: 8,),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(data.pengirim),
+                Row(
+                  children: [
+                    Icon(Icons.check, color: Colors.blue,),
+                    Text(data.pesan),
+                  ],
+                )
+              ],
+            ),
           ),
-        ),
-        SizedBox(width: 8,),
-        Text(data.waktu),
-      ],
+          SizedBox(width: 8,),
+          Text(data.waktu),
+        ],
+      ),
     );
   }
 }

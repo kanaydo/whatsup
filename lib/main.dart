@@ -33,8 +33,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Chats'),
+      ),
       body: Container(
-        color: Colors.blue.shade50,
+        // color: Colors.blue.shade50,
         child: ListView.builder(
           itemCount: chats.length,
           itemBuilder: (context, index) {
