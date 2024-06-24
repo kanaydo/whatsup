@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsup/chat_item.dart';
 
+import 'login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
